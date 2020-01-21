@@ -1,4 +1,4 @@
-Server allows to store, update, change and share task list. Works with MongoDB hosted on MongoDB Cluster.
+Server allows to store, update, change and share task list. Based on Express and Mongoose, works with MongoDB hosted on MongoDB Cluster.
 
 
 # How to run
