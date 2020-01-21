@@ -6,8 +6,8 @@ Server allows to store, update, change and share task list. Based on Express and
 ``` npm install ```
 
 2. Run via nodemon or devServer
-``` npm run nodemon ```
+``` npm install --save-dev nodemon & npm run nodemon ```
 or
-``` npm run start```
+``` node ./server.js```
 
 3. Server starts on port ```:4088```
