@@ -12,6 +12,14 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 server.listen(port);
 
+server.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
 
 server.get('/', (req, res) => {
     res.send(`You're on the server!`);
@@ -21,6 +29,7 @@ server.get('/', (req, res) => {
 server.post('/register', async (req, res) => {
     const { userName, password, email } = req.body.userData;
     const queries = await registerUser(userName, password, email);
+    res.header('', 'http://localhost:3000/');
     res.send(queries);
     res.end();
 });
